@@ -19,3 +19,16 @@ nav {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
+.preloader-wrapper {
+  position: absolute;
+  top: 38%;
+  left: 43%;
+  margin: auto;
+}
+.preloader-wrapper.big {
+  width: 180px;
+  height: 180px;
+}
+.circle-clipper .circle {
+  border-width: 7px;
+}
