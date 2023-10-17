@@ -5,19 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aqua;
 }
-nav {
-  padding: 0px 30px;
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 .content {
   min-height: calc(100vh - 53px - 64px);
   padding: 20px 0;
   position: relative;
-}
-.goodse {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
 }
 .preloader-wrapper {
   position: absolute;
@@ -31,4 +29,73 @@ nav {
 }
 .circle-clipper .circle {
   border-width: 7px;
+}
+nav {
+  padding: 0px 30px;
+}
+footer {
+  padding: 15px 0px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.search-btn {
+  position: absolute;
+  top: 20%;
+  right: 0;
+}
+.row {
+  position: relative;
+}
+.item {
+  max-width: 300px;
+}
+.card-content {
+  padding: 10px;
+}
+.card {
+  position: relative;
+  /* ==== */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.title {
+  position: absolute;
+  z-index: 5;
+  color: wheat;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+}
+.card-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  text-transform: capitalize;
+}
+.subtitle {
+  padding: 0px 10px;
+}
+.cart {
+  cursor: pointer;
+  position: fixed;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 5px;
+  bottom: 60px;
+  right: 100px;
+}
+@media (min-width: 767px) {
+  .cart {
+    top: 100px;
+    bottom: unset;
+  }
+}
+.cart-quantity {
 }
