@@ -1,8 +1,16 @@
 import React from "react";
 
 export default function GoodsItem(props) {
-  const { name, description, id, price } = props;
-  const { icon_background } = props.images;
+  console.log(props);
+
+  const {
+    displayAssets,
+    mainId: displayName,
+    displayName: name,
+    price,
+    displayDescription: description,
+    addToBasket = Function.prototype,
+  } = props;
 
   return (
     <>
@@ -10,10 +18,12 @@ export default function GoodsItem(props) {
         <div className="card">
           <span className="title">{name}</span>
           <div className="card-image">
-            <img src={icon_background} alt="item" />
+            <img src={displayAssets[0].full_background} alt={displayName} />
             <div className="card-action">
-              <button className="btn">Added to cart</button>
-              <span className="right">{price}</span>
+              <button onClick={() => addToBasket(name, price)} className="btn">
+                Added to cart
+              </button>
+              <span className="right">{price.regularPrice}</span>
             </div>
           </div>
           <div className="subtitle">{description}</div>
