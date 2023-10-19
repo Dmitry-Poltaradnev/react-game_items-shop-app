@@ -1,15 +1,14 @@
-import React from "react";
-import GoodsItem from "./GoodsItem";
+import GoodItem from "./GoodItem";
 
 export default function GoodsList(props) {
-  const { goods = [], addToBasket = Function.prototype } = props;
+  const { goods = [] } = props;
   if (!goods.length) {
-    return <h3>Nothin hear</h3>;
+    return <h3>Nothing here</h3>;
   }
   return (
-    <div className="items">
-      {goods.map((good) => (
-        <GoodsItem key={good.id} {...good} addToBasket={addToBasket} />
+    <div className="goods">
+      {goods.map((item) => (
+        <GoodItem key={item.id} {...item} />
       ))}
     </div>
   );
