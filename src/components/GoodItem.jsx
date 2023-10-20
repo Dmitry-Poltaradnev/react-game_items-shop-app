@@ -1,5 +1,12 @@
 export default function GoodItem(props) {
-  const { name, id, description, total, image } = props;
+  const {
+    addToBasket = Function.prototype,
+    name,
+    id,
+    description,
+    total,
+    image,
+  } = props;
   return (
     <>
       <div className="card">
@@ -14,7 +21,10 @@ export default function GoodItem(props) {
               <span>{total}</span>
             </div>
             <div className="card-action">
-              <button className="waves-effect waves-light btn right">
+              <button
+                onClick={() => addToBasket({ id, name, total, image })}
+                className="waves-effect waves-light btn right"
+              >
                 Push for add score
               </button>
             </div>
