@@ -5,6 +5,8 @@ export default function BasketList(props) {
     order = [],
     showBasket = Function.prototypero,
     removeFromBasket = Function.prototype,
+    removeItem = Function.prototype,
+    addItem = Function.prototype,
   } = props;
 
   const totalScore = order.reduce((sum, elem) => {
@@ -27,6 +29,8 @@ export default function BasketList(props) {
               {...order}
               showBasket={showBasket}
               removeFromBasket={removeFromBasket}
+              removeItem={removeItem}
+              addItem={addItem}
             />
           ))}
           <li className="collection-item active">Total score: {totalScore}</li>

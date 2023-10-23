@@ -11,6 +11,40 @@ export default function Shop() {
   const [order, setOrder] = useState([]);
   const [isBasketShow, setBasketShow] = useState(false);
 
+  const addItem = (itemId) => {
+    const newOrder = order.map((item) => {
+      if (item.id === itemId) {
+        const newQuantity = item.quantity + 1;
+        return {
+          ...item,
+          quantity: newQuantity,
+        };
+      } else {
+        return item;
+      }
+    });
+    setOrder(newOrder);
+  };
+  
+  const removeItem = (itemId) => {
+    const newOrder = order.map((item) => {
+      if (item.id === itemId) {
+        if (item.quantity !== 0) {
+          const newQuantity = item.quantity - 1;
+          return {
+            ...item,
+            quantity: newQuantity,
+          };
+        } else {
+          return item;
+        }
+      } else {
+        return item;
+      }
+    });
+    setOrder(newOrder);
+  };
+
   const showBasket = () => {
     setBasketShow(!isBasketShow);
   };
@@ -66,6 +100,8 @@ export default function Shop() {
             order={order}
             showBasket={showBasket}
             removeFromBasket={removeFromBasket}
+            addItem={addItem}
+            removeItem={removeItem}
           />
         )}
       </main>

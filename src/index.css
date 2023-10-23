@@ -95,6 +95,12 @@ footer {
   z-index: 100;
   animation: show 500ms ease-in-out;
 }
+.basket-counter {
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0px 7px;
+  color: #26a69a;
+}
 .cart {
   cursor: pointer;
   position: fixed;
