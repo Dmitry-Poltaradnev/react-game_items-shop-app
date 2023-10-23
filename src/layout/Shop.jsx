@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Preloader from "../components/Preloader";
 import GoodsList from "../components/GoodsList";
 import Cart from "../components/Cart";
-import Basket from "../components/BasketList";
 import BasketList from "../components/BasketList";
 
 export default function Shop() {
@@ -14,6 +13,9 @@ export default function Shop() {
 
   const showBasket = () => {
     setBasketShow(!isBasketShow);
+  };
+  const removeFromBasket = (id) => {
+    setOrder(order.filter((item) => item.id !== id));
   };
 
   const addToBasket = (item) => {
@@ -59,7 +61,13 @@ export default function Shop() {
         ) : (
           <GoodsList goods={goods} addToBasket={addToBasket} />
         )}
-        {isBasketShow && <BasketList order={order} showBasket={showBasket} />}
+        {isBasketShow && (
+          <BasketList
+            order={order}
+            showBasket={showBasket}
+            removeFromBasket={removeFromBasket}
+          />
+        )}
       </main>
     </>
   );

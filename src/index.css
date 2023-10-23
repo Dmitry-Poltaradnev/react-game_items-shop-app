@@ -79,6 +79,22 @@ footer {
 .subtitle {
   padding: 0px 24px;
 }
+.basket-delete {
+  cursor: pointer;
+}
+.close-icon {
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.close-icon:hover {
+  color: rgb(222, 177, 32);
+  transform: rotate(180deg);
+}
+.basket-list {
+  position: absolute;
+  z-index: 100;
+  animation: show 500ms ease-in-out;
+}
 .cart {
   cursor: pointer;
   position: fixed;
@@ -92,5 +108,15 @@ footer {
   .cart {
     top: 100px;
     bottom: unset;
+  }
+}
+@keyframes show {
+  from {
+    top: 70%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
   }
 }
