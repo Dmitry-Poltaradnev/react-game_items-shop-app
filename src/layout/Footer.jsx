@@ -4,7 +4,12 @@ function Footer() {
       <div className="footer-copyright">
         <div className="container">
           year of creation {new Date().getFullYear()}
-          <a className="right grey-text text-lighten-4" href="#!">
+          <a
+            className="right grey-text text-lighten-4"
+            href="https://github.com/Dmitry-Poltaradnev/react-game_items-shop-app"
+            target="_blank"
+            rel="noreferrer"
+          >
             Repo
           </a>
         </div>
