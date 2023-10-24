@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <nav className="green accent-2">
+      <nav className="lime darken-3">
         <div className=" nav-wrapper">
           <a href="#" className="brand-logo">
             Game Items Shop

@@ -3,6 +3,7 @@ import Preloader from "../components/Preloader";
 import GoodsList from "../components/GoodsList";
 import Cart from "../components/Cart";
 import BasketList from "../components/BasketList";
+import Alert from "../components/Alert";
 
 export default function Shop() {
   const apeKey = `6356c020-9c0a12b0-5f527435-cf4a2344`;
@@ -10,6 +11,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
   const [order, setOrder] = useState([]);
   const [isBasketShow, setBasketShow] = useState(false);
+  const [alertName, setAlertName] = useState("");
 
   const addItem = (itemId) => {
     const newOrder = order.map((item) => {
@@ -25,7 +27,7 @@ export default function Shop() {
     });
     setOrder(newOrder);
   };
-  
+
   const removeItem = (itemId) => {
     const newOrder = order.map((item) => {
       if (item.id === itemId) {
@@ -74,6 +76,10 @@ export default function Shop() {
       });
       setOrder(newOrder);
     }
+    setAlertName(item.name);
+  };
+  const closeAlert = () => {
+    setAlertName("");
   };
 
   useEffect(function getGoods() {
@@ -104,6 +110,7 @@ export default function Shop() {
             removeItem={removeItem}
           />
         )}
+        {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
       </main>
     </>
   );

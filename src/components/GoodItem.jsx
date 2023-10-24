@@ -10,25 +10,21 @@ export default function GoodItem(props) {
   return (
     <>
       <div className="card">
-        <div className="col s12 m7">
-          <div className="card">
-            <div className="card-image">
-              <img src={image} alt={name} />
-              <span className="title">{name}</span>
-            </div>
-            <div className="card-content">
-              <p>{description}</p>
-              <span>{total}</span>
-            </div>
-            <div className="card-action">
-              <button
-                onClick={() => addToBasket({ id, name, total, image })}
-                className="waves-effect waves-light btn right"
-              >
-                Push for add score
-              </button>
-            </div>
-          </div>
+        <div className="card-image">
+          <img src={image} alt={name} />
+          <span className="title">{name}</span>
+        </div>
+        <div className="card-content">
+          <p>{description}</p>
+        </div>
+        <div className="card-action">
+          <span className="totalScore">{total} : Points for achievement</span>
+          <button
+            onClick={() => addToBasket({ id, name, total, image })}
+            className="waves-effect waves-light btn test"
+          >
+            Push for add score
+          </button>
         </div>
       </div>
     </>
