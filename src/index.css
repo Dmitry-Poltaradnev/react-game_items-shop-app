@@ -10,6 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffeb3b;
 }
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -117,8 +121,8 @@ footer {
   z-index: 10;
   padding: 10px;
   border-radius: 5px;
-  bottom: 60px;
-  right: 100px;
+  bottom: 70px;
+  left: 85%;
   margin: 0;
 }
 .card .card-action {
@@ -127,7 +131,7 @@ footer {
 
 #toast-container {
   top: 50px !important;
-  right: 10%;
+  right: 20%;
 }
 @media (max-width: 1700px) {
   #toast-container {

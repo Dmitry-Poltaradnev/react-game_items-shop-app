@@ -2,7 +2,7 @@ function Header() {
   return (
     <header>
       <nav className="lime darken-3">
-        <div className=" nav-wrapper">
+        <div className=" nav-wrapper container">
           <a
             href="https://github.com/Dmitry-Poltaradnev/react-game_items-shop-app"
             className="brand-logo"
