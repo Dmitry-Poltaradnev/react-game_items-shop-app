@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { ShopContext } from "../context";
+
 export default function Cart(props) {
-  const { quantity = 0, showBasket = Function.prototype } = props;
+  const { order, showBasket = Function.prototype } = useContext(ShopContext);
+  const quantity = order.length;
   return (
     <div
       onClick={() => showBasket()}
